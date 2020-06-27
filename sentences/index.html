@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  	<link href="style.css" rel="stylesheet">
+	<title>My page</title>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
+	<script>
+		var respectQuotes = {
+			"id1" : {
+				"quote" : "Cinco minutos bastan para soñar toda una vida, asi de relativo es el tiempo ",
+				"author" : "Mario Benedetti"
+			},
+			"id2" : {
+				"quote" : "Los verdaderos amigos se tienen que enfadar de vez en cuando ",
+				"author" : "Louis Pasteur"
+			},
+			"id3" : {
+				"quote" : "El hombre que tiene miedo sin peligro inventa el peligro para justificar su miedo ",
+				"author" : "Alain Emilie Chartier"
+			},
+			"id4" : {
+				"quote" : "Un amigo es una persona con la que se puede pensar en voz alta ",
+				"author" : "Ralph Waldo Emerson"
+			},
+			"id5" : {
+				"quote" : "Muchas personas se pierden las pequeñas alegrias mientras aguardan la gran felicidad ",
+				"author" : "Pearl Buck"
+			},
+			"id6" : {
+				"quote" : "Si das pescado a un hombre hambriento lo nutres durante una jornada. Si le enseñas a pescar, le nutriras toda su vida ",
+				"author" : "Lao Tsé"
+			},
+			"id7" : {
+				"quote" : "Si abordas una situacion como asunto de vida o muerte, moriras muchas veces ",
+				"author" : "Adam Smith"
+			},
+			"id8" : {
+				"quote" : "Nunca consideres el estudio como una obligacion, sino como una oportunidad para penetrar en el bello y maravilloso mundo del saber ",
+				"author" : "Albert Einstein"
+			},
+			"id9" : {
+				"quote" : "Hay que simpatizar siempre con la alegria de la vida. Cuanto menos se hable de las llagas de la vida, mejor ",
+				"author" : "Oscar Wilde"
+			},
+			"id10" : {
+				"quote" : "Un camino de miles de millas inicia siempre con un simple paso  ",
+				"author" : "Benjamin Franklin"
+			}
+		}
+		var paints = ['#48C9B0', '#C39BD3', '#F1948A', '#F7DC6F', '#85C1E9', '#D7DBDD', '#ABB2B9', '#E6B0AA', '#7FB3D5', '#F8BBD0'];
+		$(document).ready(function(){
+			$("#text").html(respectQuotes.id2.quote);
+			$("#author").html(respectQuotes.id2.author);
+			$('body').css('color',paints[3]);
+			$('body').css('background-color',paints[3]);
+			$('#twittertumblr').on('click', function() {
+			      open('https://twitter.com/intent/tweet?hashtags=quotes&text')
+			  });
+		   $("#new").on("click", function(){
+		   	var ops = Math.floor(Math.random() * 10);
+		   	var colorNum = Math.floor(Math.random() * 10);
+		   	$("body").animate({
+			    backgroundColor: paints[colorNum],
+			    color: paints[colorNum]
+				},1000);
+		   	$(".boxQuote").animate({
+			    color: paints[colorNum]
+				},1000);
+		/*	$('body').css('color',paints[colorNum]);
+			$('body').css('background-color',paints[colorNum]);*/
+			   	switch(ops) {
+			   		case 1:
+				   		$("#text").html(respectQuotes.id1.quote);
+				   		$("#author").html(respectQuotes.id1.author);
+				   		break;
+				   	case 2:
+				   		$("#text").html(respectQuotes.id2.quote);
+				   		$("#author").html(respectQuotes.id2.author);
+				   		break;
+				   	case 3:
+				   		$("#text").html(respectQuotes.id3.quote);
+				   		$("#author").html(respectQuotes.id3.author);
+				   		break;
+				   	case 4:
+				   		$("#text").html(respectQuotes.id4.quote);
+				   		$("#author").html(respectQuotes.id4.author);
+				   		break;
+				   	case 5:
+				   		$("#text").html(respectQuotes.id5.quote);
+				   		$("#author").html(respectQuotes.id5.author);
+				   		break;
+				   	case 6:
+				   		$("#text").html(respectQuotes.id6.quote);
+				   		$("#author").html(respectQuotes.id6.author);
+				   		break;
+				   	case 7:
+				   		$("#text").html(respectQuotes.id7.quote);
+				   		$("#author").html(respectQuotes.id7.author);
+				   		break;
+				   	case 8:
+				   		$("#text").html(respectQuotes.id8.quote);
+				   		$("#author").html(respectQuotes.id8.author);
+				   		break;
+				   	case 9:
+				   		$("#text").html(respectQuotes.id9.quote);
+				   		$("#author").html(respectQuotes.id9.author);
+				   		break;
+				   	default:
+				   		$("#text").html(respectQuotes.id10.quote);
+				   		$("#author").html(respectQuotes.id10.author);
+				   		break;
+			   	}
+		   });
+		});
+	</script>
+</head>
+<body>
+  <div class="boxQuote">
+    <div class="textQuote">
+      <i class="icon-double-angle-left"></i>
+      <span id="text"> </span><i class="icon-double-angle-right"></i>
+    </div>
+    <div class="authorQuote">
+      - <span id="author"></span>
+    </div>
+    <div class="links">
+      <a class="button" id="twittertumblr">
+        <span class="icon-stack">
+          <i class="icon-twitter"></i>
+        </span> Tweet!
+      </a> 
+      <a class="button" id="twittertumblr">
+        <span class="icon-stack">
+          <i class="icon-tumblr-sign"></i>
+        </span> Tumblr
+      </a>
+      <a class="button" id="new">
+        <span class="icon-stack">
+          <i class="icon-book"></i>
+        </span> New Quote
+      </a>
+    </div>
+  </div>
+</body>
+</html>
