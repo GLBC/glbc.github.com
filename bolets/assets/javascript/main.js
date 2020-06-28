@@ -11,7 +11,7 @@ links.forEach(function(link) {
     content.classList.add("animate__animated");
 
     setTimeout(function(){
-      location.href = "/";
+      location.href = "/bolets";
     },1000);
 
     return false;
